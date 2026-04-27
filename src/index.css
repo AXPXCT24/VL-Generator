@@ -122,10 +122,25 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-gray-800 text-foreground;
+    @apply bg-background text-foreground;
     @apply min-h-screen min-w-screen p-4;
+    background-image: radial-gradient(
+      circle,
+      hsl(0, 0%, 20%) 0.65px,
+      transparent 0.75px
+    );
+    background-size: 16px 16px;
+    background-position: 0 0;
+    background-attachment: fixed;
+    transition: background-color 0.4s ease;
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  .frosted-glass {
+    @apply bg-card/30 backdrop-blur-sm border border-white/10 rounded-full;
   }
 }
